@@ -1,0 +1,15 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: >
+      echo "Downloading human genome and annotation files..." &&
+      wget -qO- ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz | gunzip > genome.fa &&
+      wget -qO- ftp://ftp.ensembl.org/pub/release-104/gtf/homo_sapiens/Homo_sapiens.GRCh38.104.gtf.gz | gunzip > annotations.gtf &&
+      echo "Files downloaded and extracted." &&
+      echo "Installing BWA and indexing genome..." &&
+      sudo apt-get update &&
+      sudo apt-get install -y bwa &&
+      bwa index genome.fa &&
+      echo "Environment ready."
+  - command: echo "Welcome to your bioinformatics workspace. Start analyzing!"
