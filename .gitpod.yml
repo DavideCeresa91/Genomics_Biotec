@@ -3,5 +3,5 @@ image:
 
 tasks:
   - init: >
-      echo "Environment ready."
-  - command: echo "Welcome to your bioinformatics workspace. Start analyzing!"
+      echo ""
+  - command: echo " Genomics biotec    UNIGE  " | toilet -f big -F border
