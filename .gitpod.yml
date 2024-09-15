@@ -6,5 +6,5 @@ tasks:
       echo ""
   - command: |
       jp2a --width=110 --chars="@$%#*+=-:. " --invert https://id.unige.it/sites/id.unige.it/files/2022-02/scudo.png
-       echo " Genomics biotec    UNIGE  " | toilet -f big -F border
+       echo " Genomics   Lab           Biotec           UniGe  " | toilet -f big -F border
 
