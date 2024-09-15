@@ -9,10 +9,10 @@ RUN sudo apt-get update && \
 # download human genome sequence and annotations
 RUN echo "Downloading human genome and annotation files..." && \
     wget -qO- ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz | \
-    gunzip > /workspace/genome/Homo_sapiens.GRCh38.dna.primary_assembly.fa && \
+    gunzip > /workspace/genome/GRCh38_genome.fa && \
     wget -qO- ftp://ftp.ensembl.org/pub/release-104/gtf/homo_sapiens/Homo_sapiens.GRCh38.104.gtf.gz | \
-    gunzip > /workspace/genome/Homo_sapiens.GRCh38.104.gtf && \
-    bwa index /workspace/genome/genome.fa
+    gunzip > /workspace/genome/GRCh38_annotation.gtf && \
+    bwa index /workspace/genome/GRCh38_genome.fa
 
 
 # clean the cache
