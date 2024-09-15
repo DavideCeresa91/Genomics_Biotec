@@ -8,6 +8,7 @@ RUN sudo apt-get update && \
 
 # download human genome sequence and annotations
 RUN echo "Downloading human genome and annotation files..." && \
+    mkdir genome \
     wget -qO- ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz | \
     gunzip > /workspace/genome/GRCh38_genome.fa && \
     wget -qO- ftp://ftp.ensembl.org/pub/release-104/gtf/homo_sapiens/Homo_sapiens.GRCh38.104.gtf.gz | \
