@@ -3,7 +3,7 @@ FROM gitpod/workspace-full
 
 # install bioinformatic tools and Python
 RUN sudo apt-get update && \
-    sudo apt-get install -y samtools bedtools bwa toilet figlet && \
+    sudo apt-get install -y samtools bedtools bwa toilet figlet jp2a && \
     sudo apt-get install -y fastqc
 
 # download human genome sequence and annotations
