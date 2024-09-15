@@ -14,7 +14,7 @@ RUN mkdir -p genome && \
     gunzip > genome/GRCh38_annotation.gtf
 
 # index genome for BWA    
-RUN bwa index genome/GRCh38_genome.fa
+#RUN bwa index genome/GRCh38_genome.fa
 
 
 # clean the cache
