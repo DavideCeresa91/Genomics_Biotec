@@ -7,13 +7,14 @@ RUN sudo apt-get update && \
     sudo apt-get install -y fastqc
 
 # download human genome sequence and annotations
-RUN echo "Downloading human genome and annotation files..." && \
-    mkdir genome \
+RUN mkdir -p genome && \
     wget -qO- ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz | \
-    gunzip > /workspace/genome/GRCh38_genome.fa && \
+    gunzip > genome/GRCh38_genome.fa && \
     wget -qO- ftp://ftp.ensembl.org/pub/release-104/gtf/homo_sapiens/Homo_sapiens.GRCh38.104.gtf.gz | \
-    gunzip > /workspace/genome/GRCh38_annotation.gtf && \
-    bwa index /workspace/genome/GRCh38_genome.fa
+    gunzip > genome/GRCh38_annotation.gtf
+
+# index genome for BWA    
+RUN bwa index genome/GRCh38_genome.fa
 
 
 # clean the cache
